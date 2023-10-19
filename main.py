@@ -10,6 +10,7 @@ class AgeCalculator(QWidget):
         name_line_edit = QLineEdit()
 
         calculate_button = QPushButton('Calculate Age') #creating a button
+        output_age_label = QLabel('Age')
 
         date_birth_label = QLabel('Date of birth MM/DD/YYYY') #date of birth widget
         date_birth_line_edit = QLineEdit()
@@ -19,6 +20,7 @@ class AgeCalculator(QWidget):
         grid.addWidget(date_birth_label, 1, 0) #placement of widget
         grid.addWidget(date_birth_line_edit, 1, 1) #placement of widget
         grid.addWidget(calculate_button, 2, 0, 1, 2) #row2, column0, span of 1 row and 2 columns
+        grid.addWidget(output_age_label, 3,0,1,2) #row3, column0, span of 1 row and 2 columns
 
         self.setLayout(grid) #Code to output the app
 
