@@ -9,7 +9,7 @@ class AgeCalculator(QWidget):
         name_label = QLabel('Name:') #name widget
         name_line_edit = QLineEdit()
 
-        calculate_button = QPushButton() #creating a button
+        calculate_button = QPushButton('Calculate Age') #creating a button
 
         date_birth_label = QLabel('Date of birth MM/DD/YYYY') #date of birth widget
         date_birth_line_edit = QLineEdit()
