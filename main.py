@@ -12,7 +12,9 @@ class AgeCalculator(QWidget):
 
         calculate_button = QPushButton('Calculate Age') #creating a button
         calculate_button.clicked.connect(self.calculate_age) #linking the button to the calculate_age function
-        self.output_age_label = QLabel('Age') #adding self to make the variable accessible to the other functions, we also have to add the self to the addWidget placement
+        self.output_age_label = QLabel('Dito malalaman and edad mong animal ka') #adding self to make the variable accessible to the other functions,
+        # we also have to add the self to
+        # the addWidget placement
 
         date_birth_label = QLabel('Date of birth MM/DD/YYYY') #date of birth widget
         self.date_birth_line_edit = QLineEdit() #adding self to make the variable accessible to the other functions, we also have to add the self
