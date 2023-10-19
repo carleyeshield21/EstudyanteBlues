@@ -28,7 +28,7 @@ class AgeCalculator(QWidget):
         self.setLayout(grid) #Code to output the app
 
     def calculate_age(self):
-        current_year = datetime.datetime.now() #retrieving the current year
+        current_year = datetime.datetime.now().year #retrieving the current year
         year_of_birth = self.date_birth_line_edit.text() #added the text method so we can extract the actual value
         birth_year = datetime.datetime.strptime(year_of_birth, "%m/%d/%Y").date().year
         age = current_year - birth_year
