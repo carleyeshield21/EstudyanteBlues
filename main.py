@@ -5,6 +5,7 @@ import datetime
 class AgeCalculator(QWidget):
     def __init__(self):
         super().__init__() #To call the init of the parent class, in this code QWidget
+        self.setWindowTitle('Wala sa idad yan!!!!') #App Title
         grid = QGridLayout()
 
         name_label = QLabel('Name:') #name widget
