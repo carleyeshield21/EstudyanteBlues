@@ -18,7 +18,7 @@ class AgeCalculator(QWidget):
         grid.addWidget(name_line_edit, 0, 1) #placement of widget
         grid.addWidget(date_birth_label, 1, 0) #placement of widget
         grid.addWidget(date_birth_line_edit, 1, 1) #placement of widget
-        # grid.addWidget(calculate_button, 2, 0, 1, 2) #row2, column0, span of 1 row and 2 columns
+        grid.addWidget(calculate_button, 2, 0, 1, 2) #row2, column0, span of 1 row and 2 columns
 
         self.setLayout(grid) #Code to output the app
 
