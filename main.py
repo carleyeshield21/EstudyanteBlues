@@ -6,16 +6,16 @@ class AgeCalculator(QWidget):
         super().__init__() #To call the init of the parent class, in this code QWidget
         grid = QGridLayout()
 
-        name_label = QLabel('Name:')
+        name_label = QLabel('Name:') #name widget
         name_line_edit = QLineEdit()
 
-        date_birth_label = QLabel('Date of birth MM/DD/YYYY')
+        date_birth_label = QLabel('Date of birth MM/DD/YYYY') #date of birth widget
         date_birth_line_edit = QLineEdit()
 
-        grid.addWidget(name_label, 0, 0)
-        grid.addWidget(name_line_edit, 0, 1)
-        grid.addWidget(date_birth_label, 1, 0)
-        grid.addWidget(date_birth_line_edit, 1, 1)
+        grid.addWidget(name_label, 0, 0) #placement of widget
+        grid.addWidget(name_line_edit, 0, 1) #placement of widget
+        grid.addWidget(date_birth_label, 1, 0) #placement of widget
+        grid.addWidget(date_birth_line_edit, 1, 1) #placement of widget
 
         self.setLayout(grid) #Code to output the app
 
