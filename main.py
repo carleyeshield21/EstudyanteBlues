@@ -7,7 +7,7 @@ class AgeCalculator(QWidget):
         super().__init__() #To call the init of the parent class, in this code QWidget
         grid = QGridLayout()
 
-        name_label = QLabel('Name:') #name widget
+        self.name_label = QLabel('Name:') #name widget, adding self to make the variable accessible to the other functions, we also have to add the self to the addWidget placement
         name_line_edit = QLineEdit()
 
         calculate_button = QPushButton('Calculate Age') #creating a button
@@ -18,7 +18,7 @@ class AgeCalculator(QWidget):
         self.date_birth_line_edit = QLineEdit() #adding self to make the variable accessible to the other functions, we also have to add the self
         # to the addWidget placement
 
-        grid.addWidget(name_label, 0, 0) #placement of widget
+        grid.addWidget(self.name_label, 0, 0) #placement of widget
         grid.addWidget(name_line_edit, 0, 1) #placement of widget
         grid.addWidget(date_birth_label, 1, 0) #placement of widget
         grid.addWidget(self.date_birth_line_edit, 1, 1) #placement of widget
@@ -30,7 +30,8 @@ class AgeCalculator(QWidget):
     def calculate_age(self):
         current_year = datetime.datetime.now() #retrieving the current year
         year_of_birth = self.date_birth_line_edit.text() #added the text method so we can extract the actual value
-        return current_year
+        age = current_year - year_of_birth
+        self.output_age_label.setText()
 
 app = QApplication(sys.argv)
 age_calculator = AgeCalculator()
