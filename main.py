@@ -29,7 +29,7 @@ class AgeCalculator(QWidget):
 
     def calculate_age(self):
         current_year = datetime.datetime.now() #retrieving the current year
-        year_of_birth = self.date_birth_line_edit
+        year_of_birth = self.date_birth_line_edit.text() #added the text method so we can extract the actual value
         return current_year
 
 app = QApplication(sys.argv)
