@@ -11,6 +11,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         file_menu_item = self.menuBar().addMenu('&File') #Adding the ampersand sign in the beginning of the word will underscore the first letter
         help_menu_item = self.menuBar().addMenu('&Help')
 
+# the codes below are for the app to launch
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()

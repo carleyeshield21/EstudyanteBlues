@@ -37,6 +37,7 @@ class AgeCalculator(QWidget):
         age = current_year - birth_year
         self.output_age_label.setText(f"{self.name_line_edit.text()}'s age is {age} years")
 
+# the codes below are for the app to launch
 app = QApplication(sys.argv)
 age_calculator = AgeCalculator()
 age_calculator.show()
