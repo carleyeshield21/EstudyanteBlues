@@ -23,7 +23,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
-        self.teybol.setColumnCount(4) #setting the column count of our table
+        self.teybol.setColumnCount(20) #setting the column count of our table
         self.teybol.setHorizontalHeaderLabels(('ID', 'Name', 'Course', 'MobileNumber')) #setting the label names of each column
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
 
@@ -32,6 +32,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
         resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database and making a database
         # query
+        print(type(resulta_ng_database_teybol))
         self.teybol.setRowCount(0) #prevents duplicate data
         for index_row_number, row_data in enumerate(resulta_ng_database_teybol): #this nested for loop will set the items in the table cells
             self.teybol.insertRow(index_row_number)
@@ -43,6 +44,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()
+estudyante_blues.load_data() #this function should be called so we can execute the table on the app
 sys.exit(app.exec())
 
 if __name__ == '__main__':
