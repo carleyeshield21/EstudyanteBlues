@@ -19,6 +19,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         about_action = QAction('About',self)
         help_menu_item.addAction(about_action)
+        # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
