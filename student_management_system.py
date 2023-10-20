@@ -21,7 +21,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
 
-        # adding a table to the app
+        # adding a table to the app, QTableWidget should be imported
         teybol = QTableWidget
 
 # the codes below are for the app to launch
