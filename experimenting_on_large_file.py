@@ -23,15 +23,16 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
-        self.teybol.setColumnCount(20) #setting the column count of our table
+        self.teybol.setColumnCount(60) #setting the column count of our table
         self.teybol.setHorizontalHeaderLabels(('ID', 'Name', 'Course', 'MobileNumber')) #setting the label names of each column
         self.teybol.verticalHeader().setVisible(False) #this code will disable the first default column(optional)
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
 
     #creating another function for the table
     def load_data(self):
-        kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
-        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database and making a database
+        kuneksyon = sqlite3.connect('Fam_Inc_Exp_database') #creating a connection to the database file
+        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM "Family Income and Expenditure"') #executing the connection from the database
+        # and making a database
         # query
         print(type(resulta_ng_database_teybol))
         self.teybol.setRowCount(0) #prevents duplicate data
