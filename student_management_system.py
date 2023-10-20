@@ -2,4 +2,4 @@ from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLa
 import sys
 import datetime
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
