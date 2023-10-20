@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow
+from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget
 from PyQt6.QtGui import QAction
 import sys
 import datetime
@@ -20,6 +20,9 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         about_action = QAction('About',self)
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
+
+        # adding a table to the app
+        teybol = QTableWidget
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
