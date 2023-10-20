@@ -11,3 +11,6 @@ app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()
 sys.exit(app.exec())
+
+if __name__ == '__main__':
+    MainWindow()
