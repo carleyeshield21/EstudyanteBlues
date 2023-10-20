@@ -24,6 +24,7 @@ class AgeCalculator(QWidget):
         self.date_birth_line_edit = QLineEdit() #adding self to make the variable accessible to the other functions, we also have to add the self
         # to the addWidget placement
 
+        # Placement of widgets in the layout of the app
         grid.addWidget(name_label, 0, 0) #placement of widget
         grid.addWidget(self.name_line_edit, 0, 1) #placement of widget
         grid.addWidget(date_birth_label, 1, 0) #placement of widget
