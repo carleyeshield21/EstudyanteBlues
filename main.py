@@ -42,5 +42,6 @@ age_calculator = AgeCalculator()
 age_calculator.show()
 sys.exit(app.exec())
 
+
 if __name__ == '__main__':
     AgeCalculator()
