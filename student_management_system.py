@@ -23,7 +23,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
-        self.teybol.setColumnCount()
+        self.teybol.setColumnCount(20) #setting the column count of our table
 
     #creating another function for the table
     def load_data(self):
