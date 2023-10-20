@@ -17,6 +17,9 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         # drop down menu
         file_menu_item.addAction(add_student_action)
 
+        about_action = QAction('About',self)
+        help_menu_item.addAction(about_action)
+
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
