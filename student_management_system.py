@@ -44,7 +44,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()
-estudyante_blues.load_data() #this function should be called so we can execute the table on the app
+estudyante_blues.load_data() #this function should be called so we can execute the table on the app, without this line of code the table from the
+# database will not populate the table
 sys.exit(app.exec())
 
 if __name__ == '__main__':
