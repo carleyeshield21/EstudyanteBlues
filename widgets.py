@@ -12,6 +12,7 @@ class AgeCalculator(QWidget):
         self.name_line_edit = QLineEdit() #adding self to make the variable accessible to the other functions, we also have to add the self to the addWidget placement
 
         self.komvobax = QComboBox() #adding a combo box or drop down list
+        self.komvobax.addItems(['choice1','choice2','choice3','choice4']) #adding choices in the drop down list
 
         calculate_button = QPushButton('Calculate Age') #creating a button
         calculate_button.clicked.connect(self.calculate_age) #linking the button to the calculate_age function
