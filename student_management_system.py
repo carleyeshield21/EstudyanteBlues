@@ -32,6 +32,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
         resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database and making a database
         # query
+        print(resulta_ng_database_teybol)
         self.teybol
 
 # the codes below are for the app to launch
