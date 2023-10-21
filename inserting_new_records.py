@@ -91,7 +91,7 @@ class InsertDialog(QDialog):
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()
-estudyante_blues.load_data() #this function should be called so we can execute the table on the app, without this line of code the table from the
+estudyante_blues.load_data() #this method should be called so we can execute the table on the app, without this line of code the table from the
 # database will not populate the table
 sys.exit(app.exec())
 
