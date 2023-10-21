@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget, QTableWidgetItem
+from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
+                             QTableWidgetItem, QDialog)
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
@@ -46,8 +47,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dayalog = InsertDialog() #this function should be created
         dayalog.exec()
 
-def InsertDialog(self): #created outside the MainWindow class, if this is inside, the function insert in line45 will produce result in an error
-    pass
+class InsertDialog(QDialog)
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
