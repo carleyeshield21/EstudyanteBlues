@@ -61,11 +61,11 @@ class InsertDialog(QDialog):
         layout = QVBoxLayout() #we can use QGridLayout() (depends on desired layout, this is stacked vertically)
 
         # creating the widgets
-        stoodent_name = QLineEdit()
-        stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
+        self.stoodent_name = QLineEdit()
+        self.stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
 
-        course_drop_down = QComboBox() #drop down list widget
-        course_drop_down.addItems(kunyare_courses) #adding items from any list
+        self.course_drop_down = QComboBox() #drop down list widget
+        self.course_drop_down.addItems(kunyare_courses) #adding items from any list
 
         mobile_num = QLineEdit() #mobile number widget
         mobile_num.setPlaceholderText('Anong cell number mo?')
@@ -73,16 +73,22 @@ class InsertDialog(QDialog):
         submit_mo_na_boton = QPushButton('Register your information')
 
         # placement of widgets to the layout of app
-        layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
+        layout.addWidget(self.stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
-        layout.addWidget(course_drop_down)
+        layout.addWidget(self.course_drop_down)
         layout.addWidget(mobile_num)
         layout.addWidget(submit_mo_na_boton)
         submit_mo_na_boton.clicked.connect(self.add_student) #we will connect a method when this button si clicked, this function is created in line85
 
         self.setLayout(layout) #output of the widget layout
 
-    def add_student(self):
+    def add_student(self): #will connect to a database, the variables required will have the word self. added to access those in this method
+        name = self.stoodent_name.text() #extracting the text using text() method
+        course = self.course_drop_down.itemText(self.course_drop_down.currentIndex()) #this should be the format for a combo box or drop down list
+        # to extract the choice
+        database_connection = sqlite3.connect('database.db')
+        korsor = database_connection.cursor()
+        korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", name, course, mobile)
 
 
 
