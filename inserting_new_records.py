@@ -18,12 +18,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         help_menu_item = self.menuBar().addMenu('&Help')
 
         # adding the sub menus or the action to the items in the main menu
-        add_student_action = QAction('Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
+        add_student_action = QAction('&Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
         # drop down menu
         add_student_action.triggered.connect(self.insert) #the function insert should be created
         file_menu_item.addAction(add_student_action)
 
-        about_action = QAction('About',self)
+        about_action = QAction('&About',self)
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
 
@@ -55,8 +55,8 @@ class InsertDialog(QDialog):
     def __init__(self):
         super().__init__() #calling the parent class
         self.setWindowTitle('Insert stoodent tata')  # setting the title of the app
-        self.setFixedWidth(300)
-        self.setFixedHeight(300)
+        self.setFixedWidth(300) #distance between widgets (depends on the design)
+        self.setFixedHeight(300) #distance between widgets (depends on the design)
 
         layout = QVBoxLayout() #we can use QGridLayout() (depends on desired layout, this is stacked vertically)
 
