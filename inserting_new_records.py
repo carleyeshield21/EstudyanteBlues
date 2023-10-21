@@ -20,7 +20,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         # adding the sub menus or the action to the items in the main menu
         add_student_action = QAction('&Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
         # drop down menu
-        add_student_action.triggered.connect(self.insert) #the function insert should be created
+        add_student_action.triggered.connect(self.insert) #the method insert should be created
         file_menu_item.addAction(add_student_action)
 
         about_action = QAction('&About',self)
@@ -78,8 +78,7 @@ class InsertDialog(QDialog):
         layout.addWidget(course_drop_down)
         layout.addWidget(mobile_num)
         layout.addWidget(submit_mo_na_boton)
-        submit_mo_na_boton.clicked.connect(self.add_student) #we will connect a function when this button si clicked, this function is created in
-        # line85
+        submit_mo_na_boton.clicked.connect(self.add_student) #we will connect a method when this button si clicked, this function is created in line85
 
         self.setLayout(layout) #output of the widget layout
 
