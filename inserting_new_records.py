@@ -89,7 +89,8 @@ class InsertDialog(QDialog):
         mobile = self.mobile_num.text() #extracting the text using text() method
         database_connection = sqlite3.connect('database.db')
         korsor = database_connection.cursor()
-        korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", name, course, mobile)
+        korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", (name, course, mobile))
+        database_connection.commit() #to apply the changes in the database
 
 
 
