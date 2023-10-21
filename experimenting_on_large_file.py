@@ -20,7 +20,6 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         # adding the sub menus or the action to the items in the main menu
         add_student_action = QAction('Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
         # drop down menu
-        add_student_action.triggered.connect(self.insert) #the function insert must be created
         file_menu_item.addAction(add_student_action)
 
         about_action = QAction('About',self)
