@@ -44,10 +44,11 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         kuneksyon.close()
 
     def insert(self): #this function created from line18
-        dayalog = InsertDialog() #this function should be created
+        dayalog = InsertDialog() #this class should be created in line50
         dayalog.exec()
 
-class InsertDialog(QDialog)
+class InsertDialog(QDialog):
+
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
