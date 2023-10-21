@@ -35,9 +35,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     #creating another function for the table
     def load_data(self):
         kuneksyon = sqlite3.connect('Fam_Inc_Exp_database') #creating a connection to the database file
-        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM "Family Income and Expenditure"') #executing the connection from the database
-        # and making a database
-        # query
+        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM "Family Income and Expenditure"') #executing the connection from the database and making a database query
         print(type(resulta_ng_database_teybol))
         self.teybol.setRowCount(0) #prevents duplicate data
         for index_row_number, row_data in enumerate(resulta_ng_database_teybol): #this nested for loop will set the items in the table cells
@@ -50,8 +48,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
 estudyante_blues.show()
-estudyante_blues.load_data() #this function should be called so we can execute the table on the app, without this line of code the table from the
-# database will not populate the table
+estudyante_blues.load_data() #this function should be called so we can execute the table on the app, without this line of code the table from the database will not populate the table
 sys.exit(app.exec())
 
 if __name__ == '__main__':
