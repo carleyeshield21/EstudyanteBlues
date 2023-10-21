@@ -58,15 +58,14 @@ class InsertDialog(QDialog):
         self.setFixedWidth(300)
         self.setFixedHeight(300)
 
-        layout = QVBoxLayout() #we can use QGridLayout() (depends on desired layout)
+        layout = QVBoxLayout() #we can use QGridLayout() (depends on desired layout, this is stacked vertically)
 
         # creating the widgets
         stoodent_name = QLineEdit()
         stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
 
-        course_drop_down = QComboBox()
-        course_drop_down.addItems(kunyare_courses)
-        course_drop_down.setPlaceholderText('Mamili ka dito sa listahan')
+        course_drop_down = QComboBox() #drop down list widget
+        course_drop_down.addItems(kunyare_courses) #adding items from any list
 
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
