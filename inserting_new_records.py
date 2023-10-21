@@ -97,9 +97,6 @@ class InsertDialog(QDialog):
 
         estudyante_blues.load_data() #to automatically update the database without the need to close it and open again
 
-
-
-
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
