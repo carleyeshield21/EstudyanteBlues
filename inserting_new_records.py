@@ -67,10 +67,14 @@ class InsertDialog(QDialog):
         course_drop_down = QComboBox() #drop down list widget
         course_drop_down.addItems(kunyare_courses) #adding items from any list
 
+        mobile_num = QLineEdit() #mobile number widget
+        mobile_num.setPlaceholderText('Anong cell number mo?')
+
         # placement of widgets to the layout of app
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
         layout.addWidget(course_drop_down)
+        layout.addWidget(mobile_num)
 
         self.setLayout(layout) #output of the widget layout
 
