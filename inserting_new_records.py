@@ -57,6 +57,11 @@ class InsertDialog(QDialog):
         layout = QVBoxLayout() #we can use QGridLayout() (depends on desired layout)
 
         # creating the widgets
+        stoodent_name = QLineEdit()
+        stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
+
+        layout.addWidget()
+
 
 
 # the codes below are for the app to launch
