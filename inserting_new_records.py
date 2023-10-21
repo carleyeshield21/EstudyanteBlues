@@ -50,7 +50,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 class InsertDialog(QDialog):
     def __init__(self):
         super().__init__() #calling the parent class
-
+        self.setWindowTitle('Estudyante Blues Management System')  # setting the title of the app
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
