@@ -2,6 +2,10 @@ from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLa
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
+import pandas
+
+table = pandas.read_csv('Family Income and Expenditure.csv')
+list_columns = list(table.columns.values) #list for column titles
 
 class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def __init__(self):
@@ -24,7 +28,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
         self.teybol.setColumnCount(60) #setting the column count of our table
-        self.teybol.setHorizontalHeaderLabels(('ID', 'Name', 'Course', 'MobileNumber')) #setting the label names of each column
+        self.teybol.setHorizontalHeaderLabels(list_columns) #setting the label names of each column
         self.teybol.verticalHeader().setVisible(False) #this code will disable the first default column(optional)
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
 
@@ -40,7 +44,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
             self.teybol.insertRow(index_row_number)
             for index_column_number, data in enumerate(row_data):
                 self.teybol.setItem(index_row_number, index_column_number, QTableWidgetItem(str(data)))
-        # kuneksyon.close()
+        kuneksyon.close()
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
