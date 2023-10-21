@@ -67,6 +67,7 @@ class InsertDialog(QDialog):
         course_drop_down = QComboBox() #drop down list widget
         course_drop_down.addItems(kunyare_courses) #adding items from any list
 
+        # placement of widgets to the layout of app
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
         layout.addWidget(course_drop_down)
