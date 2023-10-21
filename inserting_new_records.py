@@ -92,6 +92,9 @@ class InsertDialog(QDialog):
         korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", (name, course, mobile))
         database_connection.commit() #to apply the changes in the database
 
+        korsor.close()
+        database_connection.close()
+
 
 
 
