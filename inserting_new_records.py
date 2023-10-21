@@ -46,7 +46,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dayalog = InsertDialog() #this function should be created
         dayalog.exec()
 
-def InsertDialog(self): #created outside the MainWindow class
+def InsertDialog(self): #created outside the MainWindow class, if this is inside, the function insert in line45 will produce result in an error
     pass
 
 # the codes below are for the app to launch
