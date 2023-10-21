@@ -86,7 +86,7 @@ class InsertDialog(QDialog):
         name = self.stoodent_name.text() #extracting the text using text() method
         course = self.course_drop_down.itemText(self.course_drop_down.currentIndex()) #this should be the format for a combo box or drop down list
         # to extract the choice
-        mobile = self.mobile_num.text()
+        mobile = self.mobile_num.text() #extracting the text using text() method
         database_connection = sqlite3.connect('database.db')
         korsor = database_connection.cursor()
         korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", name, course, mobile)
