@@ -77,7 +77,6 @@ class InsertDialog(QDialog):
         # which is stacked vertically
         layout.addWidget(self.course_drop_down)
         layout.addWidget(self.mobile_num)
-
         layout.addWidget(submit_mo_na_boton)
         submit_mo_na_boton.clicked.connect(self.add_student) #we will connect a method when this button si clicked, this function is created in line85
 
