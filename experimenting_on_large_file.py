@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget, QTableWidgetItem
+from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
+                             QTableWidgetItem, QDialog)
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
