@@ -95,6 +95,8 @@ class InsertDialog(QDialog):
         korsor.close()
         database_connection.close()
 
+        estudyante_blues.load_data() #to automatically update the database without the need to close it and open again
+
 
 
 
