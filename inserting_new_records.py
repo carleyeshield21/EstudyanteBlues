@@ -60,7 +60,8 @@ class InsertDialog(QDialog):
         stoodent_name = QLineEdit()
         stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
 
-        layout.addWidget(stoodent_name) #adding the widget
+        layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
+        # which is stacked vertically
 
         self.setLayout(layout) #output of the widget layout
 
