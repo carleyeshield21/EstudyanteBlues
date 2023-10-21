@@ -39,7 +39,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
         resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database and making a database
         # query
-        print(type(resulta_ng_database_teybol))
+        # print(type(resulta_ng_database_teybol))
         self.teybol.setRowCount(0) #prevents duplicate data
         for index_row_number, row_data in enumerate(resulta_ng_database_teybol): #this nested for loop will set the items in the table cells
             self.teybol.insertRow(index_row_number)
