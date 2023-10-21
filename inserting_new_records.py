@@ -48,6 +48,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dayalog.exec()
 
 class InsertDialog(QDialog):
+    def __init__(self):
+        super().__init__() #calling the parent class
 
 
 # the codes below are for the app to launch
