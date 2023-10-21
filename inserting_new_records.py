@@ -3,6 +3,10 @@ from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridL
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
+import pandas
+
+table = pandas.read_csv('Family Income and Expenditure.csv')
+kunyare_courses = list(table.columns.values) #list for column titles
 
 class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def __init__(self):
@@ -61,7 +65,7 @@ class InsertDialog(QDialog):
         stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
 
         course_drop_down = QComboBox()
-        self.course_d
+        course_drop_down.addItems(kunyare_courses)
 
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
