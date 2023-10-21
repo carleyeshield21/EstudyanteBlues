@@ -78,6 +78,7 @@ class InsertDialog(QDialog):
         layout.addWidget(course_drop_down)
         layout.addWidget(mobile_num)
         layout.addWidget(submit_mo_na_boton)
+        submit_mo_na_boton.clicked.connect(self.add_student)
 
         self.setLayout(layout) #output of the widget layout
 
