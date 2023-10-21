@@ -70,11 +70,14 @@ class InsertDialog(QDialog):
         mobile_num = QLineEdit() #mobile number widget
         mobile_num.setPlaceholderText('Anong cell number mo?')
 
+        submit_mo_na_boton = QPushButton('Register your information')
+
         # placement of widgets to the layout of app
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
         layout.addWidget(course_drop_down)
         layout.addWidget(mobile_num)
+        layout.addWidget(submit_mo_na_boton)
 
         self.setLayout(layout) #output of the widget layout
 
