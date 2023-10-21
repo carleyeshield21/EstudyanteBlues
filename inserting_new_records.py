@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
-                             QTableWidgetItem, QDialog)
+                             QTableWidgetItem, QDialog, QComboBox)
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
@@ -59,6 +59,9 @@ class InsertDialog(QDialog):
         # creating the widgets
         stoodent_name = QLineEdit()
         stoodent_name.setPlaceholderText('Type student name here') #setting a placeholder for student name
+
+        course_drop_down = QComboBox()
+        self.course_d
 
         layout.addWidget(stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
