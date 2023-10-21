@@ -42,6 +42,13 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
                 self.teybol.setItem(index_row_number, index_column_number, QTableWidgetItem(str(data)))
         kuneksyon.close()
 
+    def insert(self): #this function created from line18
+        dayalog = InsertDialog() #this function should be created
+        dayalog.exec()
+
+def InsertDialog(self): #created outside the MainWindow class
+    pass
+
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
 estudyante_blues = MainWindow()
