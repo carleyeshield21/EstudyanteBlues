@@ -24,7 +24,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
-        self.teybol.setColumnCount(20) #setting the column count of our table
+        self.teybol.setColumnCount(4) #setting the column count of our table
         self.teybol.setHorizontalHeaderLabels(('ID', 'Name', 'Course', 'MobileNumber')) #setting the label names of each column
         self.teybol.verticalHeader().setVisible(False) #this code will disable the first default column(optional)
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
