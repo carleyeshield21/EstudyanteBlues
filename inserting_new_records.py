@@ -67,8 +67,8 @@ class InsertDialog(QDialog):
         self.course_drop_down = QComboBox() #drop down list widget
         self.course_drop_down.addItems(kunyare_courses) #adding items from any list
 
-        mobile_num = QLineEdit() #mobile number widget
-        mobile_num.setPlaceholderText('Anong cell number mo?')
+        self.mobile_num = QLineEdit() #mobile number widget
+        self.mobile_num.setPlaceholderText('Anong cell number mo?')
 
         submit_mo_na_boton = QPushButton('Register your information')
 
@@ -76,7 +76,7 @@ class InsertDialog(QDialog):
         layout.addWidget(self.stoodent_name) #adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
         # which is stacked vertically
         layout.addWidget(self.course_drop_down)
-        layout.addWidget(mobile_num)
+        layout.addWidget(self.mobile_num)
         layout.addWidget(submit_mo_na_boton)
         submit_mo_na_boton.clicked.connect(self.add_student) #we will connect a method when this button si clicked, this function is created in line85
 
@@ -86,6 +86,7 @@ class InsertDialog(QDialog):
         name = self.stoodent_name.text() #extracting the text using text() method
         course = self.course_drop_down.itemText(self.course_drop_down.currentIndex()) #this should be the format for a combo box or drop down list
         # to extract the choice
+        mobile = self.mobile_num.text()
         database_connection = sqlite3.connect('database.db')
         korsor = database_connection.cursor()
         korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", name, course, mobile)
