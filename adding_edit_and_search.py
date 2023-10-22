@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
-                             QTableWidgetItem, QDialog, QComboBox)
+                             QTableWidgetItem, QDialog, QComboBox, QToolBar)
 from PyQt6.QtGui import QAction
 import sys
 import sqlite3
