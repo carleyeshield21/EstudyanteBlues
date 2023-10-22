@@ -38,6 +38,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar = QToolBar()
         toolbar.setMovable(True)
         self.addToolBar(toolbar) #adds the toolbar to the window
+        toolbar.addAction(add_student_action)
 
     #creating another function for the table
     def load_data(self):
