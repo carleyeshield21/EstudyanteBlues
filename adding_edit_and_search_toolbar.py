@@ -34,6 +34,11 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         self.teybol.verticalHeader().setVisible(False) #this code will disable the first default column(optional)
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
 
+        #adding toolbars import QToolBar
+        toolbar = QToolBar()
+        toolbar.setMovable(True)
+        self.addToolBar(toolbar) #adds the toolbar to the window
+
     #creating another function for the table
     def load_data(self):
         kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
