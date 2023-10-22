@@ -34,7 +34,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         self.teybol.verticalHeader().setVisible(False) #this code will disable the first default column(optional)
         self.setCentralWidget(self.teybol) #this line of code will execute the layout of the table we have created
 
-        #adding toolbars import QToolBar
+        #create toolbars and adding toolbar elements import QToolBar
         toolbar = QToolBar()
         toolbar.setMovable(True)
         self.addToolBar(toolbar) #adds the toolbar to the window
