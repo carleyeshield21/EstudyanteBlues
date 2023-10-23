@@ -44,6 +44,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         self.addToolBar(toolbar) #adds the toolbar to the window
         toolbar.addAction(add_student_action) #from line21
 
+
     #creating another function for the table
     def load_data(self):
         kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
