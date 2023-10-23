@@ -122,6 +122,7 @@ class EditDialog(QDialog):
 
         #get student name from selected row
         index = main_window.teybol.currentRow()
+        print(index)
         student_name = main_window.teybol.item(index,1).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
         print(type(student_name))
 
