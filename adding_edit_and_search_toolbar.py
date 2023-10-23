@@ -129,6 +129,11 @@ class SearchDialog(QDialog):
         self.setFixedWidth(300)
         self.setFixedHeight(300)
 
+        # creating layout and widget
+        layout = QVBoxLayout()
+        self.student_name = QLineEdit()
+        self.student_name.setPlaceholderText('Sinong hinahanap mo?')
+
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
