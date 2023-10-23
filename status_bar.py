@@ -71,6 +71,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         delete_button = QPushButton('Delete record')
         delete_button.clicked.connect(self.delete) #method will be created
 
+        #clearing duplicate buttons, without this code, the buttons will be duplicated on every cell click
+        tseldren = self.findChildren(QPushButton)
+        if tseldren:
+            for tsayld in tseldren:
+                self.istatus_bar.removeWidget(tsayld)
+
         #adding widgets to the status bar
         self.istatus_bar.addWidget(edit_button)
         self.istatus_bar.addWidget(delete_button)
