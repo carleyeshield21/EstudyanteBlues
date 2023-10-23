@@ -37,6 +37,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
         search_action = QAction('&Search', self) #this code is needed first before we can add the option when we click the Edit on the menu bar
         edit_menu_item.addAction(search_action) #this code will show the option Search when we click the Edit on the menu bar
+        search_action.triggered.connect(self.search) #the search method should be created, line74
 
 
         # adding a table to the app, QTableWidget should be imported
@@ -69,6 +70,10 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def insert(self): #this function created from line18
         dayalog = InsertDialog() #this class should be created in line50
         dayalog.exec()
+
+    def search(self):
+        dialog = SearchDialog() #this class is created line124 outside the MainWindow class
+        dialog.exec()
 
 class InsertDialog(QDialog):
     def __init__(self):
@@ -115,6 +120,14 @@ class InsertDialog(QDialog):
         database_connection.close()
 
         estudyante_blues.load_data() #to automatically update the database without the need to close it and open again
+
+class SearchDialog(QDialog):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('Maghanap ka ng istudyante')
+        self.setFixedWidth(300)
+        self.setFixedHeight(300)
+
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
