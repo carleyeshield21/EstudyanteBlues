@@ -143,7 +143,13 @@ class SearchDialog(QDialog):
         self.setLayout(layout) #to output of the dialog box
 
     def search(self):
-        pass
+        name = self.student_name.text()
+        connection = sqlite3.connect('database.db')
+        cursor = connection.cursor()
+        result = cursor.execute("SELECT * FROM students WHERE name = ?",(name,))
+        rows = list(result)
+        print(rows)
+
 
 
 # the codes below are for the app to launch
