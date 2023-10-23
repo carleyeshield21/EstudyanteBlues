@@ -143,12 +143,13 @@ class SearchDialog(QDialog):
         self.setLayout(layout) #to output of the dialog box
 
     def search(self):
-        name = self.student_name.text()
+        name = self.student_name.text() #this will get the user input on the search box
         connection = sqlite3.connect('database.db')
         cursor = connection.cursor()
         result = cursor.execute("SELECT * FROM students WHERE name = ?",(name,))
         rows = list(result)
         print(rows)
+        items = MainWindow.table.findItems(name, Qt.MatchFlag.MatchFixedString)
 
 
 
