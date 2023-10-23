@@ -141,7 +141,7 @@ class SearchDialog(QDialog):
 
         # creating button
         button = QPushButton('&Search')
-        button.clicked.connect(self.search) #the search method will be created in line145
+        button.clicked.connect(self.search) #the search method will be created in line149
         layout.addWidget(button)
 
         self.setLayout(layout) #to output of the dialog box
