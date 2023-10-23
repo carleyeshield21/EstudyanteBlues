@@ -35,7 +35,9 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
 
-        search_action = QAction('&Search', self) #this code is needed first before we can add the option when we click the Edit on the menu bar
+        search_action = QAction(QIcon('icons/search.png'),'&Search',self)  # this code is needed first before we can add the option when we click the Edit on the menu bar, previous code from line39
+        # search_action = QAction('&Search', self) #this code is needed first before we can add the option when we click the Edit on the menu bar
+
         edit_menu_item.addAction(search_action) #this code will show the option Search when we click the Edit on the menu bar
         search_action.triggered.connect(self.search) #the search method should be created, line74
 
@@ -52,6 +54,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar.setMovable(True)
         self.addToolBar(toolbar) #adds the toolbar to the window
         toolbar.addAction(add_student_action) #from line21
+
+        toolbar.addAction(search_action)
 
 
     #creating another function for the table
