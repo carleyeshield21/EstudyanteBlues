@@ -135,6 +135,13 @@ class SearchDialog(QDialog):
         self.student_name.setPlaceholderText('Sinong hinahanap mo?')
         layout.addWidget(self.student_name)
 
+        # creating button
+        # button = QPushButton('&Search')
+        # button.clicked.connect(self.search)
+        # layout.addWidget(button)
+
+        self.setLayout(layout)
+
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
