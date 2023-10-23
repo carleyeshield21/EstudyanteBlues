@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
                              QTableWidgetItem, QDialog, QComboBox, QToolBar)
-from PyQt6.QtGui import QAction
+from PyQt6.QtGui import QAction, QIcon
 import sys
 import sqlite3
 import pandas
@@ -18,8 +18,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         help_menu_item = self.menuBar().addMenu('&Help')
 
         # adding the sub menus or the action to the items in the main menu
-        add_student_action = QAction('&Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
+        add_student_action = QAction(QIcon('icons/add.png'),'&Add Stoodent',self) #the new code to add icon from line24, you can right click on the
+        # file from the folder where the icon is located then choose Copy Path/Reference then Path from Content Root
+
+        # add_student_action = QAction('&Add Stoodent',self) #must from PyQt6.QtGui import QAction, must also add the argument self to show from the
         # drop down menu
+
         add_student_action.triggered.connect(self.insert) #the method insert should be created
         file_menu_item.addAction(add_student_action)
 
@@ -38,7 +42,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar = QToolBar()
         toolbar.setMovable(True)
         self.addToolBar(toolbar) #adds the toolbar to the window
-        toolbar.addAction(add_student_action)
+        toolbar.addAction('icons/')
 
     #creating another function for the table
     def load_data(self):
