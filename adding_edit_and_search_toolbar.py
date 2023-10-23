@@ -152,6 +152,13 @@ class SearchDialog(QDialog):
         items = main_window.teybol.findItems(name, Qt.MatchFlag.MatchFixedString) #main_window created, MainWindow instance line158, teybol object
         # from line44
 
+        for item in items:
+            print(item)
+            main_window.teybol.item(item.row(),1).setSelected(True)
+
+        cursor.close()
+        connection.close()
+
 
 
 # the codes below are for the app to launch
