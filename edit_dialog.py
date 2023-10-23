@@ -142,9 +142,13 @@ class EditDialog(QDialog):
         layout.addWidget(self.course_drop_down)
         layout.addWidget(self.mobile_num)
         layout.addWidget(submit_mo_na_boton)
-        submit_mo_na_boton.clicked.connect(self.add_student)  # we will connect a method when this button si clicked, this function is created in line85
+        submit_mo_na_boton.clicked.connect(self.update_student) #method is changed to update and will be created in line 149
 
         self.setLayout(layout)  # output of the widget layout
+
+    def update_student(self):
+        pass
+
 
 
 class DeleteDialog(QDialog):
