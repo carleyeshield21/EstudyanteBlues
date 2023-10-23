@@ -149,7 +149,8 @@ class SearchDialog(QDialog):
         result = cursor.execute("SELECT * FROM students WHERE name = ?",(name,))
         rows = list(result)
         print(rows)
-        items = main_window.teybol.findItems(name, Qt.MatchFlag.MatchFixedString) #main_window created, MainWindow instance line158
+        items = main_window.teybol.findItems(name, Qt.MatchFlag.MatchFixedString) #main_window created, MainWindow instance line158, teybol object
+        # from line44
 
 
 
