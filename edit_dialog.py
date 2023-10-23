@@ -112,7 +112,40 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dialog.exec()
 
 class EditDialog(QDialog):
-    pass
+    def __init__(self):
+        super().__init__()  # calling the parent class
+        self.setWindowTitle('Update stoodent tata')  # setting the title of the app
+        self.setFixedWidth(300)  # distance between widgets (depends on the design)
+        self.setFixedHeight(300)  # distance between widgets (depends on the design)
+
+        layout = QVBoxLayout()  # we can use QGridLayout() (depends on desired layout, this is stacked vertically)
+
+        #get student name from selected row
+        index = main_window.teybol.currentRow()
+        student_name = main_window.teybol.item(index,1).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
+
+        # creating the widgets
+        self.stoodent_name = QLineEdit(student_name)
+        self.stoodent_name.setPlaceholderText('Type student name here')  # setting a placeholder for student name
+
+        self.course_drop_down = QComboBox()  # drop down list widget
+        self.course_drop_down.addItems(kunyare_courses)  # adding items from any list
+
+        self.mobile_num = QLineEdit()  # mobile number widget
+        self.mobile_num.setPlaceholderText('Anong cell number mo?')
+
+        submit_mo_na_boton = QPushButton('Register your information')
+
+        # placement of widgets to the layout of app
+        layout.addWidget(self.stoodent_name)  # adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
+        # which is stacked vertically
+        layout.addWidget(self.course_drop_down)
+        layout.addWidget(self.mobile_num)
+        layout.addWidget(submit_mo_na_boton)
+        submit_mo_na_boton.clicked.connect(self.add_student)  # we will connect a method when this button si clicked, this function is created in line85
+
+        self.setLayout(layout)  # output of the widget layout
+
 
 class DeleteDialog(QDialog):
     pass
