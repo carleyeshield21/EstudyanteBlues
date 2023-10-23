@@ -35,8 +35,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
 
-        # search_action = QAction('&Search', self)
-        # edit_menu_item.addAction(search_action)
+        search_action = QAction('&Search', self) #this code is needed first before we can add the option when we click the Edit on the menu bar
+        edit_menu_item.addAction(search_action) #this code will show the option Search when we click the Edit on the menu bar
 
 
         # adding a table to the app, QTableWidget should be imported
