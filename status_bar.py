@@ -57,7 +57,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar.addAction(search_action)
 
         #Creating Status bar and status bar elements
-
+        istatus_bar = QStatusBar() #creating a status bar instance
+        self.setStatusBar(istatus_bar) #will show a gray status bar created below the window
 
 
 
