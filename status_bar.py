@@ -91,7 +91,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dialog.exec()
 
     def edit(self):
-        dialog = EditDialog() #another class should be created
+        dialog = EditDialog() #another class should be created outside the MainWindow class
         dialog.exec()
 
 class EditDialog(QDialog):
