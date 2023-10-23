@@ -1,8 +1,8 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QLabel, QWidget,  QGridLayout, QLineEdit, QPushButton, QMainWindow, QTableWidget,
                              QTableWidgetItem, QDialog, QComboBox, QToolBar)
 from PyQt6.QtGui import QAction, QIcon
-from PyQt6.QtCore import Qt
-import sys
+from PyQt6.QtCore import Qt #used in line152
+import sys #used in line158, window will not run without this
 import sqlite3
 import pandas
 
