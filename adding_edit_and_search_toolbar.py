@@ -12,6 +12,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def __init__(self):
         super().__init__() #To call the init of the parent class, in this code QMainWindow
         self.setWindowTitle('Estudyante Blues Management System') #setting the title of the app
+        self.setMinimumSize(800,600) #setting the size of the output window
 
         # Adding items on the menu bar
         file_menu_item = self.menuBar().addMenu('&File') #Adding the ampersand sign in the beginning of the word will underscore the first letter
