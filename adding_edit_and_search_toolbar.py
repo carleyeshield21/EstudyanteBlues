@@ -153,8 +153,9 @@ class SearchDialog(QDialog):
         # from line44
 
         for item in items:
-            print(item)
-            main_window.teybol.item(item.row(),1).setSelected(True)
+            # print(item)
+            # main_window.teybol.item(item.row(),1).setSelected(True)
+            print(main_window.teybol.item(item.row(),1).setSelected(True))
 
         cursor.close()
         connection.close()
