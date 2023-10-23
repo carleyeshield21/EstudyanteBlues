@@ -61,11 +61,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         self.setStatusBar(istatus_bar) #will show a gray status bar created below the window
 
         #Detecting a click
-        self.teybol.cellClicked.connect(self.a_cell_is_clicked)
+        self.teybol.cellClicked.connect(self.a_cell_is_clicked) #created method on line66
 
     def a_cell_is_clicked(self):
+        edit_button = QPushButton('Edit record')
+        edit_button.clicked.connect(self.edit) #create method
         print('Clicked')
-
 
 
     #creating another function for the table
@@ -88,6 +89,13 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def search(self):
         dialog = SearchDialog() #this class is created line124 outside the MainWindow class
         dialog.exec()
+
+    def edit(self):
+        dialog = EditDialog() #another class should be created
+        dialog.exec()
+
+class EditDialog(QDialog):
+    pass
 
 class InsertDialog(QDialog):
     def __init__(self):
