@@ -19,7 +19,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         file_menu_item = self.menuBar().addMenu('&File') #Adding the ampersand sign in the beginning of the word will underscore the first letter
         help_menu_item = self.menuBar().addMenu('&Help')
 
-        edit_menu_item = self.menuBar().addMenu('&Edit')
+        edit_menu_item = self.menuBar().addMenu('&Edit') #adding the Edit to the menu bar
 
         # adding the sub menus or the action to the items in the main menu
         add_student_action = QAction(QIcon('icons/add.png'),'&Add Stoodent',self) #the new code to add icon from line24, you can right click on the
