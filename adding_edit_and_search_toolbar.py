@@ -124,6 +124,7 @@ class InsertDialog(QDialog):
 class SearchDialog(QDialog):
     def __init__(self):
         super().__init__()
+        # setting title and size
         self.setWindowTitle('Maghanap ka ng istudyante')
         self.setFixedWidth(300)
         self.setFixedHeight(300)
