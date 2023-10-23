@@ -149,12 +149,13 @@ class SearchDialog(QDialog):
         result = cursor.execute("SELECT * FROM students WHERE name = ?",(name,))
         rows = list(result)
         print(rows)
-        items = MainWindow.table.findItems(name, Qt.MatchFlag.MatchFixedString)
+        items = main_window.table.findItems(name, Qt.MatchFlag.MatchFixedString) #main_window created, MaiinWindow instance
 
 
 
 # the codes below are for the app to launch
 app = QApplication(sys.argv)
+main_window = MainWindow()
 estudyante_blues = MainWindow()
 estudyante_blues.show()
 estudyante_blues.load_data() #this method should be called so we can execute the table on the app, without this line of code the table from the
