@@ -19,7 +19,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         file_menu_item = self.menuBar().addMenu('&File') #Adding the ampersand sign in the beginning of the word will underscore the first letter
         help_menu_item = self.menuBar().addMenu('&Help')
 
-        edit_menu_item = self.menuBar().addMenu('&Edit') #adding the Edit to the menu bar
+        edit_menu_item = self.menuBar().addMenu('&Edit') #adding the Edit to the menu bar,can be clicked but no action is added yet, to add the action, we need the codes on line39,40
 
         # adding the sub menus or the action to the items in the main menu
         add_student_action = QAction(QIcon('icons/add.png'),'&Add Stoodent',self) #the new code to add icon from line24, you can right click on the
@@ -34,6 +34,10 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         about_action = QAction('&About',self)
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
+
+        # search_action = QAction('&Search', self)
+        # edit_menu_item.addAction(search_action)
+
 
         # adding a table to the app, QTableWidget should be imported
         self.teybol = QTableWidget() #this variable will be accessed from another function to load the the table so we need to add the self keyword
