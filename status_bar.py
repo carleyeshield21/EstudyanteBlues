@@ -54,8 +54,11 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar.setMovable(True)
         self.addToolBar(toolbar) #adds the toolbar to the window
         toolbar.addAction(add_student_action) #from line21
-
         toolbar.addAction(search_action)
+
+        #Creating Status bar and status bar elements
+
+
 
 
     #creating another function for the table
