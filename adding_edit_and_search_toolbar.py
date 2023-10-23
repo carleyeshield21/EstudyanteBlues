@@ -133,6 +133,7 @@ class SearchDialog(QDialog):
         layout = QVBoxLayout()
         self.student_name = QLineEdit()
         self.student_name.setPlaceholderText('Sinong hinahanap mo?')
+        layout.addWidget(self.student_name)
 
 
 # the codes below are for the app to launch
