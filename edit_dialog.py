@@ -135,6 +135,7 @@ class EditDialog(QDialog):
         self.mobile_num.setPlaceholderText('Anong cell number mo?')
 
         submit_mo_na_boton = QPushButton('Register your information')
+        submit_mo_na_boton.clicked.connect(self.update_student)  # method is changed to update and will be created in line 150
 
         # placement of widgets to the layout of app
         layout.addWidget(self.stoodent_name)  # adding the widget, no need to add the rows and columns because we chose the QVBoxLayout(),
@@ -142,7 +143,7 @@ class EditDialog(QDialog):
         layout.addWidget(self.course_drop_down)
         layout.addWidget(self.mobile_num)
         layout.addWidget(submit_mo_na_boton)
-        submit_mo_na_boton.clicked.connect(self.update_student) #method is changed to update and will be created in line 149
+
 
         self.setLayout(layout)  # output of the widget layout
 
