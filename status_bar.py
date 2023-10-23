@@ -60,6 +60,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         istatus_bar = QStatusBar() #creating a status bar instance
         self.setStatusBar(istatus_bar) #will show a gray status bar created below the window
 
+        #Detecting a click
+        self.teybol.cellClicked.connect(self.a_cell_is_clicked)
+
+    def a_cell_is_clicked(self):
+        print('Clicked')
+
 
 
     #creating another function for the table
