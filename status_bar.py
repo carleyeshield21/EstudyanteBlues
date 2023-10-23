@@ -57,8 +57,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         toolbar.addAction(search_action)
 
         #Creating Status bar and status bar elements
-        istatus_bar = QStatusBar() #creating a status bar instance
-        self.setStatusBar(istatus_bar) #will show a gray status bar created below the window
+        self.istatus_bar = QStatusBar() #creating a status bar instance, will be accessed in a_cell_is_clicked method
+        self.setStatusBar(self.istatus_bar) #will show a gray status bar created below the window
 
         #Detecting a click
         self.teybol.cellClicked.connect(self.a_cell_is_clicked) #created method on line66
@@ -67,6 +67,11 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         edit_button = QPushButton('Edit record')
         edit_button.clicked.connect(self.edit) #create method
         print('Clicked')
+
+        delete_button = QPushButton('Delete record')
+        delete_button.clicked.connect(self.delete) #method will be created
+
+        self.istatus_bar.addWidget(edit_button)
 
 
     #creating another function for the table
