@@ -123,6 +123,7 @@ class EditDialog(QDialog):
         #get student name from selected row
         index = main_window.teybol.currentRow()
         print(index)
+        print(type(index))
         student_name = main_window.teybol.item(index,1).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
         print(type(student_name))
 
@@ -130,8 +131,10 @@ class EditDialog(QDialog):
         self.stoodent_name = QLineEdit(student_name)
         self.stoodent_name.setPlaceholderText('Type student name here')  # setting a placeholder for student name
 
+        course_name = main_window.teybol.item(index,2).text() #setting a default course name
         self.course_drop_down = QComboBox()  # drop down list widget
         self.course_drop_down.addItems(kunyare_courses)  # adding items from any list
+        self.course_drop_down.setCurrentText(course_name)
 
         self.mobile_num = QLineEdit()  # mobile number widget
         self.mobile_num.setPlaceholderText('Anong cell number mo?')
