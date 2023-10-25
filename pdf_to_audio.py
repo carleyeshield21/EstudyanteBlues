@@ -12,6 +12,9 @@ with open("the Real book of Real estate - robert kiyosaki.pdf", 'rb') as pdf:
         pages += 1
 print(pages)
 
+pages = PyPDF2.PdfReader.getPage()
+text = pages.extractText()
+
 pdf_text_to_string = str(pdf_text)
 
 text_file = open('raw_pdf_file.txt', 'w')
@@ -19,6 +22,8 @@ text_file.writelines(pdf_text_to_string)
 
 
 
+
+
 speaker = pyttsx3.init()
-speaker.say('stop look and listen')
+speaker.say(text)
 speaker.runAndWait()
