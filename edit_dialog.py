@@ -84,8 +84,10 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
     #creating another function for the table
     def load_data(self):
-        kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
-        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database and making a database
+        kuneksyon = sqlite3.connect('Fam_Inc_Exp_database') #creating a connection to the database file
+        resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM "Family Income and Expenditure"') #executing the connection from the database
+        # and making a
+        # database
         # query
         # print(type(resulta_ng_database_teybol))
         self.teybol.setRowCount(0) #prevents duplicate data
@@ -120,12 +122,17 @@ class EditDialog(QDialog):
 
         layout = QVBoxLayout()  # we can use QGridLayout() (depends on desired layout, this is stacked vertically)
 
+
         #get student name from selected row
-        index = main_window.teybol.currentRow()
+        index = main_window.teybol.currentRow() + 2
         print(index)
         print(type(index))
-        student_name = main_window.teybol.item(index,1).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
+        student_name = main_window.teybol.item(index,2).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
         print(type(student_name))
+
+        # mobile number edit
+        mobile_number = main_window.teybol.item(index,2).text()
+        print(mobile_number)
 
         # creating the widgets
         self.stoodent_name = QLineEdit(student_name)
@@ -138,6 +145,7 @@ class EditDialog(QDialog):
 
         self.mobile_num = QLineEdit()  # mobile number widget
         self.mobile_num.setPlaceholderText('Anong cell number mo?')
+
 
         submit_mo_na_boton = QPushButton('Register your information')
         submit_mo_na_boton.clicked.connect(self.update_student)  # method is changed to update and will be created in line 150
