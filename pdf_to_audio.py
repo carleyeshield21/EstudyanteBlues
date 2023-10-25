@@ -21,9 +21,6 @@ text_file = open('raw_pdf_file.txt', 'w')
 text_file.writelines(pdf_text_to_string)
 
 
-
-
-
 speaker = pyttsx3.init()
 speaker.say(text)
 speaker.runAndWait()
