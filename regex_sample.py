@@ -1,7 +1,7 @@
 import re
 
-# file = open('sample_text.txt')
-file = open('raw_pdf_file.txt')
+file = open('sample_text.txt')
+# file = open('raw_pdf_file.txt')
 txt = str(file.readlines())
 # print(type(txt))
 # print(txt)
