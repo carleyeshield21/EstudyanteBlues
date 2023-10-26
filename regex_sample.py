@@ -20,8 +20,20 @@ txt = text2
 pattern3 = r'-'
 text3 = re.sub(pattern3,'',txt)
 txt = text3
+# print(txt)
+
+pattern4 = r'n•'
+text4 = re.sub(pattern4,'',txt)
+txt = text4
+# print(txt)
+
+pattern5 = r'•'
+text5 = re.sub(pattern5,'',txt)
+txt = text5
 print(txt)
 
+# THE REAL BOOK OF REAL ESTATE
+# n•
 # text = "Here is an example: AxZ BxC yDx EfG-v"
 #
 # # Define a regex pattern to detect a single character 'x' in between two letters
