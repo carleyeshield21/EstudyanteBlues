@@ -5,10 +5,11 @@ txt = str(file.readlines())
 # print(type(txt))
 # print(txt)
 
-pattern = r'\\n' #creating a pattern to detect the breakline \n but this will still leave a single backslash to the output text
-text1 = re.sub(pattern,'',txt) #replacing the breakline with a single space, a single backslash will still remain in the output text
+pattern1 = r'\\n' #creating a pattern to detect the breakline \n but this will still leave a single backslash to the output text
+text1 = re.sub(pattern1, '', txt) #replacing the breakline with a single space, a single backslash will still remain in the output text
 txt = text1 #assigning it the result to the original variable
 print(txt)
+
 
 # text = "TheREAL Book \nof \nReal Estate9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page i', '9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page ii\nThis page intentionally left blank ', 'The REAL Book \nof \nREAL EXPERTS. REAL STORIES. REAL LIFE.\nRobert Kiyosaki\nReal Estate9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page iii', 'Copyright © 2009 by Robert T. Kiyosaki\nPublished by Vanguard PressAll rights reserved. No part of this publication may be reproduced, stored in a retrieval \nsystem"
 # print(type(text))
