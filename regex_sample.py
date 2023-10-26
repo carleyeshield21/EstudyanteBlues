@@ -1,7 +1,7 @@
 import re
 
-# file = open('sample_text.txt')
-file = open('raw_pdf_file.txt')
+file = open('sample_text.txt')
+# file = open('raw_pdf_file.txt')
 txt = str(file.readlines())
 # print(type(txt))
 # print(txt)
@@ -30,6 +30,11 @@ txt = text4
 pattern5 = r'•'
 text5 = re.sub(pattern5,'',txt)
 txt = text5
+# print(txt)
+
+pattern6 = r'\d{13}' #finding all numeric characters with length of thirteen
+text6 = re.sub(pattern6,'',txt)
+txt = text6
 print(txt)
 
 # THE REAL BOOK OF REAL ESTATE
