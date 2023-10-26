@@ -45,6 +45,11 @@ txt = text7
 pattern8 = r'THE REAL BOOK OF REAL ESTATE_'
 text8 = re.sub(pattern8,'',txt)
 txt = text8
+# print(txt)
+
+pattern9 = r'real estate_new'
+text9 = re.sub(pattern9,'',txt)
+txt = text9
 print(txt)
 # ==========
 
