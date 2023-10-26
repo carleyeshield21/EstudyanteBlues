@@ -1,6 +1,7 @@
 import re
 
-file = open('sample_text.txt')
+# file = open('sample_text.txt')
+file = open('raw_pdf_file.txt')
 txt = str(file.readlines())
 # print(type(txt))
 # print(txt)
@@ -12,6 +13,9 @@ print(txt)
 
 pattern2 = r'\\' #creating a second pattern to detect the single backslash, in this code we will use a double backslash for a single backslash to
 # avoid SyntaxError
+text2 = re.sub(pattern2,'',txt)
+txt = text2
+print(txt)
 
 
 # text = "TheREAL Book \nof \nReal Estate9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page i', '9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page ii\nThis page intentionally left blank ', 'The REAL Book \nof \nREAL EXPERTS. REAL STORIES. REAL LIFE.\nRobert Kiyosaki\nReal Estate9781593155322_FM:real estate_new  3/25/09  3:52 PM  Page iii', 'Copyright © 2009 by Robert T. Kiyosaki\nPublished by Vanguard PressAll rights reserved. No part of this publication may be reproduced, stored in a retrieval \nsystem"
