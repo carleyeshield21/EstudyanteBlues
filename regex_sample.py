@@ -1,41 +1,56 @@
 import re
-
-file = open('sample_text.txt')
+# ==========
+# # file = open('sample_text.txt')
 # file = open('raw_pdf_file.txt')
-txt = str(file.readlines())
-# print(type(txt))
+# txt = str(file.readlines())
+# # print(type(txt))
+# # print(txt)
+#
+# pattern1 = r'\\n' #creating a pattern to detect the breakline \n but this will still leave a single backslash to the output text
+# text1 = re.sub(pattern1, '', txt) #replacing the breakline with a single space, a single backslash will still remain in the output text
+# txt = text1 #assigning it the result to the original variable
+# # print(txt)
+#
+# pattern2 = r'\\' #creating a second pattern to detect the single backslash, in this code we will use a double backslash for a single backslash to
+# # avoid SyntaxError
+# text2 = re.sub(pattern2,'',txt)
+# txt = text2
+# # print(txt)
+#
+# pattern3 = r'-'
+# text3 = re.sub(pattern3,'',txt)
+# txt = text3
+# # print(txt)
+#
+# pattern4 = r'n•'
+# text4 = re.sub(pattern4,'',txt)
+# txt = text4
+# # print(txt)
+#
+# pattern5 = r'•'
+# text5 = re.sub(pattern5,'',txt)
+# txt = text5
+# # print(txt)
+#
+# pattern6 = r'\d{13}' #finding all numeric characters with length of thirteen
+# text6 = re.sub(pattern6,'',txt)
+# txt = text6
 # print(txt)
+# ==========
 
-pattern1 = r'\\n' #creating a pattern to detect the breakline \n but this will still leave a single backslash to the output text
-text1 = re.sub(pattern1, '', txt) #replacing the breakline with a single space, a single backslash will still remain in the output text
-txt = text1 #assigning it the result to the original variable
-# print(txt)
+text = "THE REAL BOOK OF REAL ESTATE9781593155322"
 
-pattern2 = r'\\' #creating a second pattern to detect the single backslash, in this code we will use a double backslash for a single backslash to
-# avoid SyntaxError
-text2 = re.sub(pattern2,'',txt)
-txt = text2
-# print(txt)
+# Define a regex pattern to detect a string ending with a numeric character
+pattern = r'\d\d$'
 
-pattern3 = r'-'
-text3 = re.sub(pattern3,'',txt)
-txt = text3
-# print(txt)
+# Use re.search() to find the pattern in the text
+match = re.search(pattern, text)
 
-pattern4 = r'n•'
-text4 = re.sub(pattern4,'',txt)
-txt = text4
-# print(txt)
+if match:
+    print("String ending with a numeric character found:", match.group())
+else:
+    print("No match found.")
 
-pattern5 = r'•'
-text5 = re.sub(pattern5,'',txt)
-txt = text5
-# print(txt)
-
-pattern6 = r'\d{13}' #finding all numeric characters with length of thirteen
-text6 = re.sub(pattern6,'',txt)
-txt = text6
-print(txt)
 
 # THE REAL BOOK OF REAL ESTATE
 # n•
