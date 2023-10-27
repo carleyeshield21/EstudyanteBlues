@@ -168,15 +168,13 @@ class DeleteDialog(QDialog):
     def __init__(self):
         super().__init__()  # calling the parent class
         self.setWindowTitle('Delete Record')  # setting the title of the app
-        self.setFixedWidth(300)  # distance between widgets (depends on the design)
-        self.setFixedHeight(300)  # distance between widgets (depends on the design)
 
         layout = QGridLayout()
         confirmation = QLabel('Are you shure??')
         yes = QPushButton('Yes')
         no = QPushButton('No')
 
-        layout.addWidget(confirmation, 1, 1, 2,2)
+        layout.addWidget(confirmation, 0, 0, 2,2)
         layout.addWidget(yes, 2, 1)
         layout.addWidget(no, 2, 2)
 
