@@ -124,6 +124,7 @@ class EditDialog(QDialog):
         index = main_window.teybol.currentRow()
         student_name = main_window.teybol.item(index,0).text()
         print(student_name)
+        self.student_id = main_window.teybol.item(index,0).text()
 
 
         #get student name from selected row
@@ -186,8 +187,9 @@ class DeleteDialog(QDialog):
         yes.clicked.connect(self.delete_student)
 
     def delete_student(self):
+        #get selected row index and student id
         index = main_window.teybol.currentRow()
-        # self.st
+        self.student_id = main_window.teybol.item(index,0).text()
 
 class InsertDialog(QDialog):
     def __init__(self):
