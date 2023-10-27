@@ -125,6 +125,7 @@ class AboutDialog(QMessageBox):
         content = """
         Ang app na ito ay hindi ko pa napapagana ng maayos, merong AttributeError: 'NoneType' object has no attribute 'text'
         """
+        self.setText(content)
 
 
 class EditDialog(QDialog):
