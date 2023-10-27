@@ -193,7 +193,7 @@ class DeleteDialog(QDialog):
 
         connection = sqlite3.connect('database.db')
         cursor = connection.cursor()
-        cursor.execute('DELETE from student WHERE id = ?', (student_id, )) #should include a comma for it to be recognized as the local student_id
+        cursor.execute('DELETE from students WHERE id = ?', (student_id, )) #should include a comma for it to be recognized as the local student_id
         # variable
         connection.commit()
         cursor.close()
