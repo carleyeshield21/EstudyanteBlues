@@ -176,9 +176,9 @@ class DeleteDialog(QDialog):
         yes = QPushButton('Yes')
         no = QPushButton('No')
 
-        layout.addWidget(confirmation, 0, 1, 1, 2)
-        layout.addWidget(yes, 1, 0)
-        layout.addWidget(no, 1, 1)
+        layout.addWidget(confirmation, 1, 1, 2,2)
+        layout.addWidget(yes, 2, 1)
+        layout.addWidget(no, 2, 2)
 
         self.setLayout(layout)
 
