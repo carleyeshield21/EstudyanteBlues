@@ -121,6 +121,9 @@ class EditDialog(QDialog):
         self.setFixedHeight(300)  # distance between widgets (depends on the design)
 
         layout = QVBoxLayout()  # we can use QGridLayout() (depends on desired layout, this is stacked vertically)
+        index = main_window.teybol.currentRow()
+        student_name = main_window.teybol.item(index,0).text()
+        print(student_name)
 
 
         #get student name from selected row
@@ -184,6 +187,7 @@ class DeleteDialog(QDialog):
 
     def delete_student(self):
         index = main_window.teybol.currentRow()
+        # self.st
 
 class InsertDialog(QDialog):
     def __init__(self):
