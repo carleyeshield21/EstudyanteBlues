@@ -167,9 +167,20 @@ class EditDialog(QDialog):
 class DeleteDialog(QDialog):
     def __init__(self):
         super().__init__()  # calling the parent class
-        self.setWindowTitle('Update stoodent tata')  # setting the title of the app
+        self.setWindowTitle('Delete Record')  # setting the title of the app
         self.setFixedWidth(300)  # distance between widgets (depends on the design)
         self.setFixedHeight(300)  # distance between widgets (depends on the design)
+
+        layout = QGridLayout()
+        confirmation = QLabel('Are you shure??')
+        yes = QPushButton('Yes')
+        no = QPushButton('No')
+
+        layout.addWidget(confirmation, 0, 1, 1, 2)
+        layout.addWidget(yes, 1, 0)
+        layout.addWidget(no, 1, 1)
+
+        self.setLayout(layout)
 
 class InsertDialog(QDialog):
     def __init__(self):
