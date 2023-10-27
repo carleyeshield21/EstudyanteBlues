@@ -119,6 +119,12 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         dialog.exec()
 
 class AboutDialog(QMessageBox):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('About Face!')
+        content = """
+        Ang app na ito ay hindi ko pa napapagana ng maayos, merong AttributeError: 'NoneType' object has no attribute 'text'
+        """
 
 
 class EditDialog(QDialog):
