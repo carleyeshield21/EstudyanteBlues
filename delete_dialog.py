@@ -180,6 +180,11 @@ class DeleteDialog(QDialog):
 
         self.setLayout(layout)
 
+        yes.clicked.connect(self.delete_student)
+
+    def delete_student(self):
+        index = main_window.teybol.currentRow()
+
 class InsertDialog(QDialog):
     def __init__(self):
         super().__init__() #calling the parent class
