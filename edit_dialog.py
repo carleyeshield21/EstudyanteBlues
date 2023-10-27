@@ -124,10 +124,10 @@ class EditDialog(QDialog):
 
 
         #get student name from selected row
-        index = main_window.teybol.currentRow() + 2
+        index = main_window.teybol.currentRow()
         print(index)
         print(type(index))
-        student_name = main_window.teybol.item(index,2).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
+        student_name = main_window.teybol.item(index,1).text() #1 is the Name column in the teybol, then apply the text() method to extract the text
         print(type(student_name))
 
         # mobile number edit
