@@ -33,6 +33,7 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
         about_action = QAction('&About',self)
         help_menu_item.addAction(about_action)
         # about_action.setMenuRole(QAction.MenuRole.NoRole) => only include this code if help menu does not show up, (Mac users)
+        about_action.triggered.connect(self.about)
 
         # adding the icon for search
         search_action = QAction(QIcon('icons/search.png'),'&Search',self)  # this code is needed first before we can add the option when we click the Edit on the menu bar, previous code from line39
@@ -112,6 +113,13 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def delete(self):
         dialog = DeleteDialog() #another class should be created outside the MainWindow class
         dialog.exec()
+
+    def about(self):
+        dialog = AboutDialog() #this class will be created outside the mainWindow class
+        dialog.exec()
+
+class AboutDialog(QMessageBox):
+
 
 class EditDialog(QDialog):
     def __init__(self):
