@@ -9,6 +9,14 @@ import pandas
 table = pandas.read_csv('Family Income and Expenditure.csv')
 kunyare_courses = list(table.columns.values) #list for column titles
 
+class DatabaseConnection():
+    def __init__(self, database_file = 'database.db'):
+        self.database_file = database_file
+
+    def connect(self):
+        connection = sqlite3.connect(self.database_file)
+        return connection
+
 class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def __init__(self):
         super().__init__() #To call the init of the parent class, in this code QMainWindow
@@ -85,7 +93,8 @@ class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
 
     #creating another function for the table
     def load_data(self):
-        kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
+        kuneksyon = DatabaseConnection().connect()
+        # kuneksyon = sqlite3.connect('database.db') #creating a connection to the database file
         resulta_ng_database_teybol = kuneksyon.execute('SELECT * FROM students') #executing the connection from the database
         # and making a
         # database
@@ -206,7 +215,8 @@ class DeleteDialog(QDialog):
         index = main_window.teybol.currentRow()
         student_id = main_window.teybol.item(index,0).text()
 
-        connection = sqlite3.connect('database.db')
+        connection = DatabaseConnection().connect()
+        # connection = sqlite3.connect('database.db')
         cursor = connection.cursor()
         cursor.execute('DELETE from students WHERE id = ?', (student_id, )) #should include a comma for it to be recognized as the local student_id
         # variable
@@ -258,7 +268,7 @@ class InsertDialog(QDialog):
         course = self.course_drop_down.itemText(self.course_drop_down.currentIndex()) #this should be the format for a combo box or drop down list
         # to extract the choice
         mobile = self.mobile_num.text() #extracting the text using text() method
-        database_connection = sqlite3.connect('database.db')
+        database_connection = DatabaseConnection().connect()
         korsor = database_connection.cursor()
         korsor.execute("INSERT INTO students (name, course, mobile) VALUES (?, ?, ?)", (name, course, mobile))
         database_connection.commit() #to apply the changes in the database
@@ -291,7 +301,7 @@ class SearchDialog(QDialog):
 
     def search(self):
         name = self.student_name.text() #this will get the user input on the search box
-        connection = sqlite3.connect('database.db')
+        connection = DatabaseConnection().connect()
         cursor = connection.cursor()
         result = cursor.execute("SELECT * FROM students WHERE name = ?",(name,))
         rows = list(result)
