@@ -200,6 +200,13 @@ class DeleteDialog(QDialog):
         connection.close()
         main_window.load_data()
 
+        self.close()
+
+        confirmation_widget = QMessageBox()
+        confirmation_widget.setWindowTitle('Success')
+        confirmation_widget.setText('Da rikord was deleted saksespuli')
+        confirmation_widget.exec()
+
 class InsertDialog(QDialog):
     def __init__(self):
         super().__init__() #calling the parent class
