@@ -189,7 +189,16 @@ class DeleteDialog(QDialog):
     def delete_student(self):
         #get selected row index and student id
         index = main_window.teybol.currentRow()
-        self.student_id = main_window.teybol.item(index,0).text()
+        student_id = main_window.teybol.item(index,0).text()
+
+        connection = sqlite3.connect('database.db')
+        cursor = connection.cursor()
+        cursor.execute('DELETE from student WHERE id = ?', (student_id, )) #should include a comma for it to be recognized as the local student_id
+        # variable
+        connection.commit()
+        cursor.close()
+        connection.close()
+        main_window.load_data()
 
 class InsertDialog(QDialog):
     def __init__(self):
