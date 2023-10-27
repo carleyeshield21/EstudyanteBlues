@@ -164,9 +164,12 @@ class EditDialog(QDialog):
         pass
 
 
-
 class DeleteDialog(QDialog):
-    pass
+    def __init__(self):
+        super().__init__()  # calling the parent class
+        self.setWindowTitle('Update stoodent tata')  # setting the title of the app
+        self.setFixedWidth(300)  # distance between widgets (depends on the design)
+        self.setFixedHeight(300)  # distance between widgets (depends on the design)
 
 class InsertDialog(QDialog):
     def __init__(self):
