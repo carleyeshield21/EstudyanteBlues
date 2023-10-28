@@ -5,6 +5,7 @@ from PyQt6.QtCore import Qt #used in line152
 import sys #used in line158, window will not run without this
 import sqlite3
 import pandas
+import mysql.connector
 
 table = pandas.read_csv('Family Income and Expenditure.csv')
 kunyare_courses = list(table.columns.values) #list for column titles
