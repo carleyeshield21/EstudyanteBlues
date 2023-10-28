@@ -11,12 +11,23 @@ table = pandas.read_csv('Family Income and Expenditure.csv')
 kunyare_courses = list(table.columns.values) #list for column titles
 
 class DatabaseConnection():
-    def __init__(self, database_file = 'database.db'):
-        self.database_file = database_file
+    def __init__(self, host='localhost', user='root', password='pythonsql',database='iskul_bukol'):
+        self.host = host
+        self.user = user
+        self.password = password
+        self.database = database
 
     def connect(self):
-        connection = sqlite3.connect(self.database_file)
+        connection = mysql.connector.connect(host=self.host, user=self.user, password=self.password, database=self.database)
         return connection
+
+# class DatabaseConnection():
+#     def __init__(self, database_file = 'database.db'):
+#         self.database_file = database_file
+#
+#     def connect(self):
+#         connection = sqlite3.connect(self.database_file)
+#         return connection
 
 class MainWindow(QMainWindow): #QMainWindow has a menu bar, toolbar, status bar
     def __init__(self):
