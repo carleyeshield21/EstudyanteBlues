@@ -201,7 +201,12 @@ class EditDialog(QDialog):
         self.setLayout(layout)  # output of the widget layout
 
     def update_student(self):
-        pass
+        connection = DatabaseConnection().connect()
+        cursor = connection.cursor()
+        cursor.execute("UPDATE students SET name = %s, course = %s, mobile_num = %s WHERE id = %s",
+                       self.student_name.text(),
+                       self.course_name
+                       )
 
 
 class DeleteDialog(QDialog):
